@@ -1,0 +1,35 @@
+<body bgcolor="#323437">
+
+<h1 style="font-family: Courier New; color:hwb(37 0% 0%)" > (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ TYPATHON･ﾟ✧･ﾟ✧ლ(´ڡ`ლ)</h1>
+
+<!-- <p>
+  Start begin the Game :)
+</p> -->
+
+<button (click)='startTimer()' style="font-family: Courier New" >  >Start Timer</button>
+<!-- <button (click)='pauseTimer()'>Pause</button> -->
+<!-- <button (click)='addTimer() '>add</button> -->
+<!-- <button (click)='decreaseTimer()'>minus</button> -->
+
+<div  *ngIf="begin">
+    <p style="font-family: Courier New; color:white;" >  >{{timeLeft}} Seconds Left....</p> 
+    <div class="vertical-center">
+      <h4 appBlockCopyPaste style="font-family: Courier New; color:white;" > Type this: </h4>
+    </div>
+    <h2 appBlockCopyPaste style="font-family: Courier New; color:white;" > 
+      <p  style="color:grey" > "</p>
+        {{ quotes[index].quote }} 
+      <p style="color:grey" > "</p>
+    </h2>
+    <input type="text" #box (keyup.enter)="onEnter(box.value)" maxlength="400" [(ngModel)]="userInput">
+    <p style="font-family: Courier New; color:white;" *ngIf="submit && count>0">THERE ARE ERRORS !!! </p>
+    <p style="font-family: Courier New; color:white;" *ngIf="submit && count==0">Correct !!! </p>
+</div>
+
+
+<div *ngIf="gameOver">
+    <h1 style="font-family: Courier New; color:white;" > >Game Over</h1>
+    <h1 style="font-family: Courier New; color:white;" > > Your score is {{score}}</h1>
+
+</div>
+</body>

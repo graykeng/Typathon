@@ -1,0 +1,11 @@
+{
+  "name": "abc",
+  "version": "5.7.0",
+  "description": "abc",
+  "main": "index.js",
+  "scripts": {
+    "test": "src/index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
